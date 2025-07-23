@@ -1,0 +1,14 @@
+{
+    "UniqueName": "TheJazMaster.CombatQoL",
+    "DisplayName": "Combat Quality of Life",
+    "Description": "Adds undoing, FutureVision and a turn counter.",
+    "Version": "1.5.3",
+    "EntryPointAssembly": "CombatQoL.dll",
+    "Dependencies": [
+    ],
+    "UpdateChecks": {
+        "NexusMods": {
+            "ID": 49
+        }
+    }
+}

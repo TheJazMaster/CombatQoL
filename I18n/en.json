@@ -1,0 +1,71 @@
+{
+    "glossary": {
+		"undo": {
+			"normal": "You may freely undo this turn's actions <c=downside>until the last one with a random outcome</c>.",
+			"disabled": "<c=downside>You cannot undo any further.</c>",
+			"disabledReasons": "You cannot undo any further <c=downside>(due to {{Reasons}})</c>.",
+			"instructions": {
+				"mouse": "Click to undo your last action.",
+				"controller": "Press {{Button}} to undo your last action."
+			},
+			"prognostication": {
+				"start": "You will <c=downside>NOT</c> be able to undo this action <c=downside>({{Reasons}})</c>.",
+				"salvaged": "<c=faint>(FutureVision showing best-effort preview)</c>",
+				"startBadSimulation": "FutureVision disabled for this action <c=downside>({{Reasons}})</c>.",
+				"delimiter": ", ",
+				"invalidBrittle": "potentially revealing hidden brittle",
+				"invalidPiles": "drawing unknown card",
+				"invalidRng": "random outcome",
+				"unknownOrder": "unknown card draw order",
+				"dyingPlayer": "this action results in death",
+				"dyingEnemy": "<c=heal>this action results in victory</c>",
+				"turnEnd": "turn ending"
+			}
+		},
+		"futureVision": {
+			"enabled": "FutureVision is enabled. <c=keyword>Click to toggle.</c>",
+			"disabled": "FutureVision is disabled. <c=keyword>Click to toggle.</c>"
+		},
+		"potentialBrittle": {
+			"name": "hidden brittle",
+			"description": "One of these parts is secretly <c=parttrait>brittle</c>, but you don't know which one.",
+			"descriptionFinal": "This part is secretly <c=parttrait>brittle</c>. Not so secret anymore."
+		}
+	},
+    "artifact": {
+		"TurnCounter": {
+			"name": "TURN COUNTER",
+			"description": "Tells which turn of the combat you are on."
+		}
+	},
+	"settings": {
+		"cheating": {
+			"name": "Allow cheating",
+			"description": "When enabled, your undos will never be invalidated. Not recommended if you want a fair experience."
+		},
+		"prognostication": {
+			"name": "Enable prognostication",
+			"description": "When enabled, you will be notified if the button you are hovering over would invalidate your undos if pressed."
+		},
+		"salvage": {
+			"name": "Show imperfect previews",
+			"description": "When enabled, FutureVision will try to show a best-effort preview when previewing an unknown outcome, acting as if the unknown factors don't exist. When disabled, no preview at all is shown."
+		},
+		"showHiddenBrittle": {
+			"name": "Fracture Detection assistance",
+			"description": "When enabled, if the enemy has a hidden brittle point, all candidates will be marked. Accounts for obvious hidden brittle and already shot parts."
+		},
+		"flash": {
+			"name": "Flash",
+			"description": "Adjust the type of flash that happens when you undo.",
+			"values": {
+				"NONE": "No flash",
+				"LIGHT_BLUE": "Bright blue",
+				"FAINT_BLUE": "Faint blue",
+				"FAINT_GREEN": "Faint green",
+				"DARK_BLUE": "Dark blue",
+				"BLACK": "Darkest blue"
+			}
+		}
+	}
+}
