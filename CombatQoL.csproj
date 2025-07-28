@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>TheJazMaster.CombatQoL</RootNamespace>
-		<IncludedModProjectPaths>I18n;Sprites;Sounds</IncludedModProjectPaths>
 		<Nullable>enable</Nullable>
 		<TargetFramework>net8.0</TargetFramework>
 		<ModZipPath>$(MSBuildProjectDirectory)\.release\$(MSBuildProjectName)-$(Version).zip</ModZipPath>
@@ -10,19 +9,16 @@
 
 		<EnableDllExtract>true</EnableDllExtract>
 		<GameExePath>/home/thejazmaster/.steam/steam/steamapps/common/Cobalt Core/CobaltCore.exe</GameExePath>
-		<GameDllPath>$(ModLoaderPath)/Extract/CobaltCore.dll</GameDllPath>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Nickel.ModBuildConfig" Version="1.2.1" PrivateAssets="All" ExcludeAssets="runtime" />
-		<PackageReference Include="EnumByNameSourceGenerator" Version="1.1.1" PrivateAssets="All" ExcludeAssets="All" />
-    </ItemGroup>
+		<ModFiles Include="I18n/**" />
+		<ModFiles Include="Sprites/**" />
+		<ModFiles Include="Sounds/**" />
+	</ItemGroup>
 
-	<Target Name="PublicizeGameDll" AfterTargets="ResolveReferences">
-		<Fayti1703.AssemblyTasks.PublishAllTypes SourceFilePath="$(GameDllPath)" TargetFilePath="$(IntermediateOutputPath)/CobaltCore.dll" />
-		<ItemGroup>
-			<ReferencePath Remove="$(GameDllPath)" />
-			<ReferencePath Include="$(IntermediateOutputPath)/CobaltCore.dll" />
-		</ItemGroup>
-	</Target>
+	<ItemGroup>
+		<PackageReference Include="Nickel.ModBuildConfig" Version="2.1.0" PrivateAssets="All" ExcludeAssets="runtime" />
+		<PackageReference Include="EnumByNameSourceGenerator" Version="1.1.2" PrivateAssets="All" ExcludeAssets="All" />
+    </ItemGroup>
 </Project>

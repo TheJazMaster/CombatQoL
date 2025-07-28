@@ -74,12 +74,14 @@ public sealed class ModEntry : SimpleMod {
 			original: typeof(IModData).Assembly
 				.GetType("Nickel.EventSoundEntry")!
 				.GetMethod("CreateInstance", AccessTools.all)!,
+			prefix: new HarmonyMethod(typeof(SimulationPatches), nameof(SimulationPatches.EventSoundEntry_CreateInstance_Prefix)),
 			postfix: new HarmonyMethod(typeof(SimulationPatches), nameof(SimulationPatches.EventSoundEntry_CreateInstance_Postfix))
 		);
 		Harmony.Patch(
 			original: typeof(IModData).Assembly
 				.GetType("Nickel.ModSoundEntry")!
 				.GetMethod("CreateInstance", AccessTools.all)!,
+			prefix: new HarmonyMethod(typeof(SimulationPatches), nameof(SimulationPatches.ModSoundEntry_CreateInstance_Prefix)),
 			postfix: new HarmonyMethod(typeof(SimulationPatches), nameof(SimulationPatches.ModSoundEntry_CreateInstance_Postfix))
 		);
 

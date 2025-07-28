@@ -296,10 +296,19 @@ public static class SimulationPatches
 	
     public static bool SpriteBatch_Draw_Prefix() => !disableDraw;
 
+    public static void ModSoundEntry_CreateInstance_Prefix(ref bool started) {
+        if (isSimulating)
+            started = false;
+    }
     public static void ModSoundEntry_CreateInstance_Postfix(bool started, ref IModSoundInstance __result, IModSoundEntry __instance) {
-		if (isSimulating)
+        if (isSimulating)
 			__result = new FakeModSoundInstance(__instance, __result.Channel, 0);
 	}
+	
+    public static void EventSoundEntry_CreateInstance_Prefix(ref bool started) {
+        if (isSimulating)
+            started = false;
+    }
     public static void EventSoundEntry_CreateInstance_Postfix(bool started, ref IEventSoundInstance __result, IEventSoundEntry __instance) {
 		if (isSimulating)
 			__result = new FakeEventSoundInstance(__instance, __result.Instance, 0);
