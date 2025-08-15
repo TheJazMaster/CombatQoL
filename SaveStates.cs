@@ -293,6 +293,7 @@ public static class InvalidationReasonExtensions
 		InvalidationReason.NONE => "none",
         InvalidationReason.UNKNOWN_ORDER => "unknownOrder",
 		InvalidationReason.SECRET_BRITTLE => "invalidBrittle",
+		InvalidationReason.HIDDEN_INFORMATION => "hiddenInformation",
 		InvalidationReason.RNG_SEED => "invalidRng",
 		InvalidationReason.PILE_CONTENTS => "invalidPiles",
         InvalidationReason.DYING_ENEMY => "dyingEnemy",

@@ -19,7 +19,8 @@
 				"unknownOrder": "unknown card draw order",
 				"dyingPlayer": "this action results in death",
 				"dyingEnemy": "<c=heal>this action results in victory</c>",
-				"turnEnd": "turn ending"
+				"turnEnd": "turn ending",
+				"hiddenInformation": "revealing hidden information"
 			}
 		},
 		"futureVision": {
